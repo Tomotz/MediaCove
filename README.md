@@ -10,8 +10,8 @@ users are not charged automatically.
 
 Download the current Windows installer from the
 [Releases](https://github.com/Tomotz/MediaCove-Releases/releases) page. The LG
-TV package is also archived with each release while permanent installation is
-being reviewed through LG Seller Lounge.
+TV package is also archived for temporary Developer Mode testing. It is not yet
+available as a permanent LG Content Store installation.
 
 ## Requirements
 
@@ -23,6 +23,18 @@ being reviewed through LG Seller Lounge.
 
 The Windows beta installer is currently unsigned, so Windows SmartScreen may
 display an unknown-publisher warning.
+
+## Beta Account
+
+Create one free household account in the Windows dashboard and save the recovery
+key. No email or payment method is required. The computer stays authenticated
+across restarts and refreshes access automatically; users do not sign in every
+week. The recovery key is needed when reinstalling or moving access to another
+computer.
+
+Free beta access is temporary. MediaCove will provide at least 14 days' notice
+before a planned beta-wide cutoff. One household can run one active Windows
+server and pair multiple TVs.
 
 ## Verify Downloads
 
