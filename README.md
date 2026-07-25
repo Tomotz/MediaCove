@@ -35,3 +35,11 @@ Get-FileHash .\MediaCove-Server-1.0.0-Windows-x64.exe -Algorithm SHA256
 
 MediaCove does not bundle movies, subtitle catalogs, FFmpeg, private entitlement
 keys, or administrator credentials.
+
+## Support And Policies
+
+- Support: [mediacove.support@gmail.com](mailto:mediacove.support@gmail.com)
+- [Privacy policy](https://mediacove-entitlements.mediacove.workers.dev/privacy/)
+- [Free beta terms](https://mediacove-entitlements.mediacove.workers.dev/terms/)
+- [Account deletion](https://mediacove-entitlements.mediacove.workers.dev/deletion/)
+- [Security reporting](https://mediacove-entitlements.mediacove.workers.dev/security/)
