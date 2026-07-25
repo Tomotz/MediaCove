@@ -30,3 +30,8 @@ normal Windows users.
 The release passed strict type checks, automated tests, production builds, TV
 packaging, store-image validation, clean Windows install/uninstall, production
 entitlement registration, signed lease verification, and revocation testing.
+
+## Support
+
+Email [mediacove.support@gmail.com](mailto:mediacove.support@gmail.com) or visit
+the [MediaCove support page](https://mediacove-entitlements.mediacove.workers.dev/support/).
