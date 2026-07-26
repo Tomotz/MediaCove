@@ -5,7 +5,7 @@ webOS TV on the same home network.
 
 ## Features
 
- - Video streaming from windows PC to LG TV
+ - Video streaming from windows PC to LG TV - Easily share your full media library with your TV
  - Automatic English caption generation (powered by whisperAI models)
  - Automatic same language transcription
  - Automatic caption download from OpenSubtitles.org
