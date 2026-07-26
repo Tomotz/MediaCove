@@ -5,10 +5,32 @@ same direct-play-first LAN server and LG TV client as the Windows release.
 
 ## Install
 
-1. Install Node.js 20 or newer, FFmpeg, and ffprobe.
-2. Download the `.tar.gz` archive and matching `.sha256` file from Releases.
-3. Verify and extract the archive into a permanent directory.
-4. In that directory, run:
+1. Install [Node.js 20 or newer](https://nodejs.org/en/download), FFmpeg, and
+   ffprobe. On macOS, `brew install node ffmpeg` installs all three tools.
+2. Download the
+   [portable archive](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz)
+   and its
+   [checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256).
+3. Verify the archive on Linux:
+
+   ```sh
+   sha256sum -c MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256
+   ```
+
+   Or on macOS:
+
+   ```sh
+   shasum -a 256 -c MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256
+   ```
+
+4. Extract the archive into a permanent directory:
+
+   ```sh
+   tar -xzf MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz
+   cd MediaCove-Server-1.0.3-Linux-macOS-Portable
+   ```
+
+5. In that directory, run:
 
 ```sh
 npm install --omit=dev
@@ -38,3 +60,6 @@ The default data locations are `~/.local/share/mediacove` on Linux and
 Native signed installers and automated Whisper model installation are not part
 of this initial portable beta. Compatible local automatic-caption tools can be
 configured with the `MEDIACOVE_WHISPER_*` environment variables.
+
+For firewall examples, server configuration, LG TV installation, and pairing,
+use the [complete installation guide](https://mediacove-entitlements.mediacove.workers.dev/download/).

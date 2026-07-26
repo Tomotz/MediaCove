@@ -18,9 +18,18 @@ source repository is private and is not mirrored here.
 MediaCove is currently a free public beta. No payment method is required and
 users are not charged automatically.
 
-Download the current Windows installer or Linux/macOS portable beta from the
-[Releases](https://github.com/Tomotz/MediaCove/releases) page. The LG TV package
-is also archived for temporary Developer Mode testing. It is not yet available
+MediaCove 1.0.3 has one complete
+[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.0.3) for all
+platforms:
+
+- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Windows-x64.exe)
+- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz)
+- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256)
+- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-TV-1.0.3.ipk)
+- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/SHA256SUMS.txt)
+- [MediaCove 1.0.3 release notes](RELEASE_NOTES_1.0.3.md)
+
+The TV package is for temporary Developer Mode testing. It is not yet available
 as a permanent LG Content Store installation.
 
 ## Requirements
@@ -44,7 +53,8 @@ available. See [PORTABLE_BETA.md](PORTABLE_BETA.md) for complete setup.
 ## Complete Setup
 
 The computer server and LG TV app are both required. The canonical setup page
-keeps both download locations and their current installation status together:
+contains direct downloads and complete Windows, Linux, macOS, firewall, LG
+Developer Mode, pairing, and verification instructions:
 
 <https://mediacove-entitlements.mediacove.workers.dev/download/>
 
@@ -74,10 +84,16 @@ Windows installer with the published value:
 Get-FileHash .\MediaCove-Server-1.0.3-Windows-x64.exe -Algorithm SHA256
 ```
 
-On Linux or macOS, verify the portable archive with its companion file:
+On Linux, verify the portable archive with its companion file:
 
 ```sh
-sha256sum -c MediaCove-Server-*-Linux-macOS-Portable.tar.gz.sha256
+sha256sum -c MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256
+```
+
+On macOS:
+
+```sh
+shasum -a 256 -c MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 ## Support And Policies
