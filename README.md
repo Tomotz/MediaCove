@@ -60,7 +60,7 @@ Each release includes `SHA256SUMS.txt`. In PowerShell, compare a download with
 the published value:
 
 ```powershell
-Get-FileHash .\MediaCove-Server-1.0.1-Windows-x64.exe -Algorithm SHA256
+Get-FileHash .\MediaCove-Server-1.0.2-Windows-x64.exe -Algorithm SHA256
 ```
 
 ## Support And Policies
