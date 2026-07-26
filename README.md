@@ -27,8 +27,10 @@ available as a permanent LG Content Store installation.
 
 - A 64-bit Windows 10 or Windows 11 computer.
 - An LG TV with webOS support on the same trusted household network.
-- FFmpeg and ffprobe installed separately for media inspection, transcoding,
-  embedded subtitles, and automatic captions.
+
+The Windows installer includes its Node.js runtime and offers to install FFmpeg
+and ffprobe automatically through Microsoft WinGet. FFmpeg remains a separate
+GPL-3.0 package, but customers do not need to find or configure it themselves.
 
 The Windows beta installer is currently unsigned, so Windows SmartScreen may
 display an unknown-publisher warning.
@@ -52,7 +54,10 @@ reinstalling or moving access to another computer.
 
 Free beta access is temporary. MediaCove will provide at least 14 days' notice
 before a planned beta-wide cutoff. One household can run one active Windows
-server and pair multiple TVs.
+server and pair multiple TVs. MediaCove can revoke an account or end beta access
+centrally. New playback then stops at the next successful online check or no
+later than the current signed lease's seven-day expiry. This offline window is
+not a weekly login prompt.
 
 ## Verify Downloads
 
@@ -60,7 +65,7 @@ Each release includes `SHA256SUMS.txt`. In PowerShell, compare a download with
 the published value:
 
 ```powershell
-Get-FileHash .\MediaCove-Server-1.0.2-Windows-x64.exe -Algorithm SHA256
+Get-FileHash .\MediaCove-Server-1.0.3-Windows-x64.exe -Algorithm SHA256
 ```
 
 ## Support And Policies
