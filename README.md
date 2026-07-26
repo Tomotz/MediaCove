@@ -37,7 +37,9 @@ as a permanent LG Content Store installation.
 Samsung Tizen support currently includes the shared TV client, remote handling,
 root exit confirmation, lifecycle handling, WGT signing, installation, launch,
 and basic H.264/AAC HLS playback verified in Samsung's Tizen 10 TV emulator.
-There is no public Samsung WGT or physical-TV support claim yet. See
+An experimental physical-TV Developer Mode installation is documented, but it
+has not been verified on Samsung hardware. There is no universal public Samsung
+WGT or physical-TV support claim yet. See
 [Samsung Tizen development preview](SAMSUNG_PREVIEW.md).
 
 ## Canonical Project Locations
@@ -56,8 +58,8 @@ three locations.
 - An LG TV with webOS support on the same trusted household network for the
   public TV package.
 - For the Samsung development preview, an authorized source checkout, Tizen
-  Studio with the Samsung TV Extension, a Samsung certificate profile, and a
-  Tizen TV emulator.
+  Studio with the Samsung TV Extension, a Samsung certificate profile, and
+  either a Tizen TV emulator or a developer-enabled physical Samsung Tizen TV.
 
 The Windows installer includes its Node.js runtime and offers to install FFmpeg
 and ffprobe automatically through Microsoft WinGet. FFmpeg remains a separate
