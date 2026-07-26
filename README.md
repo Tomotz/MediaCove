@@ -18,16 +18,16 @@ source repository is private and is not mirrored here.
 MediaCove is currently a free public beta. No payment method is required and
 users are not charged automatically.
 
-MediaCove 1.0.3 has one complete
-[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.0.3) for all
+MediaCove 1.0.5 has one complete
+[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.0.5) for all
 platforms:
 
-- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Windows-x64.exe)
-- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz)
-- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256)
-- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-TV-1.0.3.ipk)
-- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/SHA256SUMS.txt)
-- [MediaCove 1.0.3 release notes](RELEASE_NOTES_1.0.3.md)
+- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/MediaCove-Server-1.0.5-Windows-x64.exe)
+- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/MediaCove-Server-1.0.5-Linux-macOS-Portable.tar.gz)
+- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/MediaCove-Server-1.0.5-Linux-macOS-Portable.tar.gz.sha256)
+- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/MediaCove-TV-1.0.5.ipk)
+- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/SHA256SUMS.txt)
+- [MediaCove 1.0.5 release notes](RELEASE_NOTES_1.0.5.md)
 
 The TV package is for temporary Developer Mode testing. It is not yet available
 as a permanent LG Content Store installation.
@@ -66,10 +66,17 @@ node --version
 The Windows beta installer is currently unsigned, so Windows SmartScreen may
 display an unknown-publisher warning.
 
+After installation, Windows keeps a MediaCove icon in the notification area.
+Double-click it to open Server Control, or right-click it for
+**Open MediaCove** and **Exit MediaCove**. Exit stops the server as well as the
+icon. The icon may initially appear under the taskbar's hidden-icons arrow.
+
 Extract the portable beta to a permanent directory, run
 `npm install --omit=dev`, then `npm run start`. It includes current-user systemd
-and launchd startup helpers. Native signed Linux/macOS installers and bundled
-automatic-caption models are not yet available. See
+and launchd startup helpers. Linux gets an application-menu entry with Open and
+Stop actions; macOS gets `~/Applications/MediaCove.app`, which can be dragged
+to the Dock. Native signed Linux/macOS installers and bundled automatic-caption
+models are not yet available. See
 [PORTABLE_BETA.md](PORTABLE_BETA.md) for complete setup.
 
 ## Complete Setup
@@ -103,19 +110,19 @@ Each release includes SHA-256 integrity information. In PowerShell, compare the
 Windows installer with the published value:
 
 ```powershell
-Get-FileHash .\MediaCove-Server-1.0.3-Windows-x64.exe -Algorithm SHA256
+Get-FileHash .\MediaCove-Server-1.0.5-Windows-x64.exe -Algorithm SHA256
 ```
 
 On Linux, verify the portable archive with its companion file:
 
 ```sh
-sha256sum -c MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256
+sha256sum -c MediaCove-Server-1.0.5-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 On macOS:
 
 ```sh
-shasum -a 256 -c MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz.sha256
+shasum -a 256 -c MediaCove-Server-1.0.5-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 ## Support And Policies
