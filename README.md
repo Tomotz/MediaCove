@@ -32,6 +32,16 @@ platforms:
 The TV package is for temporary Developer Mode testing. It is not yet available
 as a permanent LG Content Store installation.
 
+## Canonical Project Locations
+
+- Public downloads and releases: <https://github.com/Tomotz/MediaCove>
+- Private source repository: <https://github.com/Tomotz/MediaCove-Private>
+- Customer download and setup guide: <https://mediacove-entitlements.mediacove.workers.dev/download/>
+
+The source repository is private and is available only to authorized
+collaborators. Release and installation changes are kept consistent across all
+three locations.
+
 ## Requirements
 
 - A 64-bit Windows 10/11 computer, or an x64/ARM64 Linux or macOS computer.
@@ -41,14 +51,26 @@ The Windows installer includes its Node.js runtime and offers to install FFmpeg
 and ffprobe automatically through Microsoft WinGet. FFmpeg remains a separate
 GPL-3.0 package, but customers do not need to find or configure it themselves.
 
+The portable Linux/macOS server requires Node.js 22.x, npm, FFmpeg, and ffprobe.
+Other Node.js major versions are not supported. On macOS, use Homebrew's
+versioned formula because the unversioned `node` formula may install an
+unsupported newer major:
+
+```sh
+brew install node@22 ffmpeg
+echo 'export PATH="$(brew --prefix node@22)/bin:$PATH"' >> ~/.zprofile
+export PATH="$(brew --prefix node@22)/bin:$PATH"
+node --version
+```
+
 The Windows beta installer is currently unsigned, so Windows SmartScreen may
 display an unknown-publisher warning.
 
-The portable beta requires Node.js 20 or newer plus FFmpeg and ffprobe. Extract
-it to a permanent directory, run `npm install --omit=dev`, then `npm run start`.
-It includes current-user systemd and launchd startup helpers. Native signed
-Linux/macOS installers and bundled automatic-caption models are not yet
-available. See [PORTABLE_BETA.md](PORTABLE_BETA.md) for complete setup.
+Extract the portable beta to a permanent directory, run
+`npm install --omit=dev`, then `npm run start`. It includes current-user systemd
+and launchd startup helpers. Native signed Linux/macOS installers and bundled
+automatic-caption models are not yet available. See
+[PORTABLE_BETA.md](PORTABLE_BETA.md) for complete setup.
 
 ## Complete Setup
 
