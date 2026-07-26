@@ -1,0 +1,62 @@
+# Samsung Tizen Development Preview
+
+MediaCove's Samsung client is under active development. It is not yet a
+customer download or a supported physical-TV release.
+
+## Current status
+
+The following pass on Samsung's Tizen 10 TV emulator:
+
+- the shared MediaCove TV interface;
+- Tizen runtime detection;
+- D-pad navigation and registered media keys;
+- Samsung-compliant root Back confirmation and application exit;
+- Home/hide and resume lifecycle handling;
+- signed WGT build, install, reinstall, uninstall, and launch.
+- basic H.264/AAC HLS playback rendered by the Tizen 10 emulator.
+
+The current build deliberately requests the server's verified H.264/AAC HLS
+fallback instead of advertising unverified Samsung MP4 direct-play codecs.
+
+## Why there is no WGT download
+
+Samsung development packages are signed for an intended emulator or television
+using a private author/distributor certificate profile and the target DUID. A
+WGT signed for the MediaCove development emulator is not a universal package
+for another emulator or TV.
+
+MediaCove will not advertise physical Samsung TV support until the complete
+playback matrix passes and either representative physical-device testing or
+Samsung certification closes the emulator-only gap.
+
+## Authorized developer setup
+
+1. Install [Tizen Studio](https://developer.samsung.com/smarttv/develop/getting-started/setting-up-sdk/installing-tv-sdk.html)
+   and the [Samsung TV Extension](https://developer.samsung.com/smarttv/develop/tools/tv-extension/download.html).
+2. Install Web CLI, Certificate Manager, and Samsung Certificate Extension.
+3. Create and boot a Samsung TV emulator. Tizen 10 is the currently verified
+   target.
+4. Confirm the serial with `sdb devices`.
+5. Create a private Samsung certificate profile that includes the emulator
+   DUID. Never commit its certificates, password, `profiles.xml`, or DUID list.
+6. From an authorized MediaCove source checkout using Node.js 22.x:
+
+   ```powershell
+   pnpm build:tv
+   node scripts/package-samsung-tv.mjs --prepare-only
+   node scripts/package-samsung-tv.mjs --profile YourSamsungProfile `
+     --target emulator-26101 --install --run
+   ```
+
+Replace the profile and emulator serial with your own values.
+
+## Remaining release gates
+
+- direct-play profiles plus pause, repeated seeking, subtitle,
+  automatic-caption, audio-only, title-switching, and network-loss coverage;
+- oldest-supported and current Tizen emulator coverage;
+- physical Samsung TV or Samsung certification evidence;
+- Seller Office package, listing, model groups, and review.
+
+The public [download and setup guide](https://mediacove-entitlements.mediacove.workers.dev/download/)
+will add a Samsung customer download only after those gates pass.

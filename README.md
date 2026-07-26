@@ -1,7 +1,9 @@
 # MediaCove
 
 MediaCove streams video files you already own from a Windows, Linux, or macOS
-computer to an LG webOS TV on the same home network.
+computer to a television on the same home network. LG webOS is the current
+downloadable TV target. Samsung Tizen is available as an emulator-tested
+development preview, not yet as a public Samsung TV package.
 
 ## Features
 
@@ -32,6 +34,12 @@ platforms:
 The TV package is for temporary Developer Mode testing. It is not yet available
 as a permanent LG Content Store installation.
 
+Samsung Tizen support currently includes the shared TV client, remote handling,
+root exit confirmation, lifecycle handling, WGT signing, installation, launch,
+and basic H.264/AAC HLS playback verified in Samsung's Tizen 10 TV emulator.
+There is no public Samsung WGT or physical-TV support claim yet. See
+[Samsung Tizen development preview](SAMSUNG_PREVIEW.md).
+
 ## Canonical Project Locations
 
 - Public downloads and releases: <https://github.com/Tomotz/MediaCove>
@@ -45,7 +53,11 @@ three locations.
 ## Requirements
 
 - A 64-bit Windows 10/11 computer, or an x64/ARM64 Linux or macOS computer.
-- An LG TV with webOS support on the same trusted household network.
+- An LG TV with webOS support on the same trusted household network for the
+  public TV package.
+- For the Samsung development preview, an authorized source checkout, Tizen
+  Studio with the Samsung TV Extension, a Samsung certificate profile, and a
+  Tizen TV emulator.
 
 The Windows installer includes its Node.js runtime and offers to install FFmpeg
 and ffprobe automatically through Microsoft WinGet. FFmpeg remains a separate
@@ -81,14 +93,19 @@ models are not yet available. See
 
 ## Complete Setup
 
-The computer server and LG TV app are both required. The canonical setup page
+The computer server and a TV client are both required. The canonical setup page
 contains direct downloads and complete Windows, Linux, macOS, firewall, LG
-Developer Mode, pairing, and verification instructions:
+Developer Mode, pairing, verification, and Samsung preview instructions:
 
 <https://mediacove-entitlements.mediacove.workers.dev/download/>
 
 After installing both apps, open `http://localhost:32480` on the computer, navigate to
 **Server Control**, and enter the five-character pairing code on the TV.
+
+If the library opens but playback reports that server access is inactive, open
+**Server Control > MediaCove account**. Create free beta access and save its
+recovery key, or connect with an existing key, then select **Refresh status**.
+Library browsing can work while stream creation is blocked.
 
 ## Beta Account
 
