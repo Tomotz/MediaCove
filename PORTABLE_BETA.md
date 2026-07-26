@@ -5,8 +5,19 @@ same direct-play-first LAN server and LG TV client as the Windows release.
 
 ## Install
 
-1. Install [Node.js 20 or newer](https://nodejs.org/en/download), FFmpeg, and
-   ffprobe. On macOS, `brew install node ffmpeg` installs all three tools.
+1. Install [Node.js 22.x](https://nodejs.org/en/download/archive/v22), FFmpeg,
+   and ffprobe. Other Node.js major versions are not supported. On macOS,
+   install and activate Homebrew's versioned, keg-only Node.js formula:
+
+   ```sh
+   brew install node@22 ffmpeg
+   echo 'export PATH="$(brew --prefix node@22)/bin:$PATH"' >> ~/.zprofile
+   export PATH="$(brew --prefix node@22)/bin:$PATH"
+   node --version
+   ```
+
+   `node --version` must begin with `v22.`. Do not use `brew install node`,
+   because the unversioned formula may install an unsupported newer major.
 2. Download the
    [portable archive](https://github.com/Tomotz/MediaCove/releases/download/v1.0.3/MediaCove-Server-1.0.3-Linux-macOS-Portable.tar.gz)
    and its
@@ -63,3 +74,9 @@ configured with the `MEDIACOVE_WHISPER_*` environment variables.
 
 For firewall examples, server configuration, LG TV installation, and pairing,
 use the [complete installation guide](https://mediacove-entitlements.mediacove.workers.dev/download/).
+
+## Canonical locations
+
+- Public downloads: <https://github.com/Tomotz/MediaCove>
+- Private source: <https://github.com/Tomotz/MediaCove-Private>
+- Setup guide: <https://mediacove-entitlements.mediacove.workers.dev/download/>
