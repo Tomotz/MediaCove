@@ -95,7 +95,8 @@ Replace the profile and emulator serial with your own values.
    Replace the profile and target with the exact values from Certificate
    Manager and `sdb devices`.
 8. Keep MediaCove Server running on the computer. On Windows, run
-   `scripts/allow-tv-firewall.ps1` as Administrator to allow the default
+   `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/allow-tv-firewall.ps1`
+   as Administrator to allow the default
    `192.168.0.0/24` private subnet (or pass your subnet with `-Subnet`). On
    Linux, if UFW is enabled, use `sudo ufw allow from 192.168.0.0/24 to any
    port 32480 proto tcp`. In MediaCove on the TV, pair using the computer's LAN IPv4 address,
