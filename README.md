@@ -20,16 +20,16 @@ source repository is private and is not mirrored here.
 MediaCove is currently a free public beta. No payment method is required and
 users are not charged automatically.
 
-MediaCove 1.0.5 has one complete
-[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.0.5) for all
+MediaCove 1.3.9 has one complete
+[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.3.9) for all
 platforms:
 
-- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/MediaCove-Server-1.0.5-Windows-x64.exe)
-- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/MediaCove-Server-1.0.5-Linux-macOS-Portable.tar.gz)
-- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/MediaCove-Server-1.0.5-Linux-macOS-Portable.tar.gz.sha256)
-- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/MediaCove-TV-1.0.5.ipk)
-- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.0.5/SHA256SUMS.txt)
-- [MediaCove 1.0.5 release notes](RELEASE_NOTES_1.0.5.md)
+- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.3.9/MediaCove-Server-1.3.9-Windows-x64.exe)
+- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.3.9/MediaCove-Server-1.3.9-Linux-macOS-Portable.tar.gz)
+- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.3.9/MediaCove-Server-1.3.9-Linux-macOS-Portable.tar.gz.sha256)
+- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.3.9/MediaCove-TV-1.3.9.ipk)
+- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.3.9/SHA256SUMS.txt)
+- [MediaCove 1.3.9 release notes](RELEASE_NOTES_1.3.9.md)
 
 The TV package is for temporary Developer Mode testing. It is not yet available
 as a permanent LG Content Store installation.
@@ -55,7 +55,7 @@ three locations.
 ## Requirements
 
 - A 64-bit Windows 10/11 computer, or an x64/ARM64 Linux or macOS computer.
-- An LG TV with webOS support on the same trusted household network for the
+- An LG TV with webOS 3.0 or newer on the same trusted household network for the
   public TV package.
 - For the Samsung development preview, an authorized source checkout, Tizen
   Studio with the Samsung TV Extension, a Samsung certificate profile, and
@@ -97,12 +97,17 @@ models are not yet available. See
 
 The computer server and a TV client are both required. The canonical setup page
 contains direct downloads and complete Windows, Linux, macOS, firewall, LG
-Developer Mode, pairing, verification, and Samsung preview instructions:
+Developer Mode, connection, verification, and Samsung preview instructions:
 
 <https://mediacove-entitlements.mediacove.workers.dev/download/>
 
-After installing both apps, open `http://localhost:32480` on the computer, navigate to
-**Server Control**, and enter the five-character pairing code on the TV.
+After installing both apps, open `http://localhost:32480` on the computer and add
+your media folders in **Server Control**. The TV connects automatically when no
+management password is configured; otherwise enter that password on the TV.
+
+Update both the server and LG TV app to 1.3.9. The web player is included in the
+server update. TV episode caching has been removed; Google Drive caching is
+not included in this release.
 
 If the library opens but playback reports that server access is inactive, open
 **Server Control > MediaCove account**. Create free beta access and save its
@@ -129,19 +134,19 @@ Each release includes SHA-256 integrity information. In PowerShell, compare the
 Windows installer with the published value:
 
 ```powershell
-Get-FileHash .\MediaCove-Server-1.0.5-Windows-x64.exe -Algorithm SHA256
+Get-FileHash .\MediaCove-Server-1.3.9-Windows-x64.exe -Algorithm SHA256
 ```
 
 On Linux, verify the portable archive with its companion file:
 
 ```sh
-sha256sum -c MediaCove-Server-1.0.5-Linux-macOS-Portable.tar.gz.sha256
+sha256sum -c MediaCove-Server-1.3.9-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 On macOS:
 
 ```sh
-shasum -a 256 -c MediaCove-Server-1.0.5-Linux-macOS-Portable.tar.gz.sha256
+shasum -a 256 -c MediaCove-Server-1.3.9-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 ## Support And Policies
