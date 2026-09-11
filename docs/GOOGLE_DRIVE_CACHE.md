@@ -1,6 +1,6 @@
 # Google Drive cache controls
 
-MediaCove 1.3.10 adds experimental cache controls to the installed server.
+MediaCove 1.3.11 adds experimental cache controls to the installed server.
 Google connection is optional and starts disconnected. Normal LAN playback
 continues without Google or an internet connection.
 
@@ -86,8 +86,11 @@ The Windows credential implementation uses native current-user DPAPI and reads
 the previous .NET DPAPI format. Linux/macOS retain their existing encrypted
 credential store.
 
-Live Google connection, upload/cancellation, subtitle preview, and restart tests
-remain required before claiming unattended cloud reliability. Repeat large-file TV tests only
+Live household verification passed for encrypted connection across restart,
+an unchanged 8,150,964-byte video plus its English subtitle, anonymous range
+checks, browser playback, and paired removal with the source preserved.
+Long-running upload cancellation and unattended cloud reliability remain
+experimental. Repeat large-file TV tests only
 after the managed cloud catalog and fallback are integrated.
 
 References: [desktop OAuth](https://developers.google.com/identity/protocols/oauth2/native-app),
