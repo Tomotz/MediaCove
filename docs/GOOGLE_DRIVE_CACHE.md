@@ -1,15 +1,17 @@
 # Google Drive cache controls
 
-MediaCove 1.3.11 adds experimental cache controls to the installed server.
+MediaCove 1.3.12 places experimental cache controls in Google settings.
 Google connection is optional and starts disconnected. Normal LAN playback
 continues without Google or an internet connection.
 
 ## Server Control
 
-Open **Server Control → Google Drive cache** on the server dashboard.
+Open **Server Control → Settings → Google settings** on the server dashboard.
 
-- **Google account:** connect, reconnect, disconnect, and refresh the account's
-  Drive storage usage. Connection setup is available only on the server computer.
+- **Google account:** connect or disconnect the account. **Sign in again** appears only when
+  authorization has expired or been revoked. Drive storage usage updates
+  automatically while the dialog is open. Connection setup is available only
+  on the server computer.
 - **Total cache budget:** defaults to 8 GB for the entire household. Queued,
   uploaded, blocked, and pending-removal copies reserve their complete size.
   Remove entries before lowering the budget below that reservation.
@@ -19,8 +21,9 @@ Open **Server Control → Google Drive cache** on the server dashboard.
   available text track. A preferred language is used when available. One WebVTT
   companion is uploaded and counted in the budget. Image-only subtitles require
   a text subtitle before the episode can be cached.
-- **Add episodes:** search the server's indexed library and select individual
-  episodes. Uploads run one at a time and resume after a server restart.
+- **Add episodes:** open **Media → Library** and choose **Cache episode** on
+  an episode row. Its button then shows the cache status; select it to open
+  Google settings. Uploads run one at a time and resume after a server restart.
 - **Pause uploads:** preserves queued jobs and existing cloud copies. Ready
   copies remain available for preview while uploads are paused.
 - **Retry:** explicitly retry a failed upload or a Google-blocked playback check.
