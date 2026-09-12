@@ -118,3 +118,8 @@ Official Samsung references:
 
 The public [download and setup guide](https://mediacove-entitlements.mediacove.workers.dev/download/)
 will add a Samsung customer download only after those gates pass.
+
+For 1.3.12, lifecycle checks passed but the current emulator playback check
+failed and remains unverified. The server update was released with an explicit
+owner-approved exception. Earlier passing emulator evidence does not establish
+playback verification for 1.3.12. No Samsung WGT is published.
