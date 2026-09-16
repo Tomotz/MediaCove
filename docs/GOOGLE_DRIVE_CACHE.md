@@ -21,10 +21,10 @@ Open **Server Control → Settings → Google settings** on the server dashboard
   available text track. A preferred language is used when available. One WebVTT
   companion is uploaded and counted in the budget. Image-only subtitles require
   a text subtitle before the episode can be cached.
-- **Add episodes:** open **Media → Library** and choose **Cache episode** on
+- **Add episodes:** open **Media → Library** and choose **Options → Cache episode** on
   an episode row. Its button then shows the cache status; select it to open
   Google settings. Uploads run one at a time and resume after a server restart.
-- **Pause uploads:** preserves queued jobs and existing cloud copies. Ready
+- **Pause caching:** stops automatic selection and uploads, preserving queued jobs and existing cloud copies. Ready
   copies remain available for preview while uploads are paused.
 - **Retry:** explicitly retry a failed upload or a Google-blocked playback check.
 - **Remove from cache:** cancels an active resumable upload and removes the
@@ -101,3 +101,41 @@ References: [desktop OAuth](https://developers.google.com/identity/protocols/oau
 [Drive resumable uploads](https://developers.google.com/workspace/drive/api/guides/manage-uploads),
 [sharing permissions](https://developers.google.com/workspace/drive/api/guides/manage-sharing),
 [application properties](https://developers.google.com/workspace/drive/api/guides/properties).
+
+## Automatic selection and LRU (current source / household update)
+
+Automatic caching uses the same shared Up Next selector as the TV library,
+using household viewing progress. It checks about every 30 seconds while caching
+is enabled. Device-specific Up Next dismissals do not hide episodes from the
+shared household cache. Removed library entries are excluded.
+
+Up Next considers the most recently played clip in each folder. It offers resume
+after at least one minute of viewing when at least five minutes remain. It also
+offers the next clip when the current clip is complete or has at most ten minutes
+remaining after viewing has begun. The next clip must be unfinished and have
+older viewing activity than the current clip. Candidates are ordered by most
+recent triggering activity. The next-episode function sorts titles naturally
+(2 before 10), then crosses into the next naturally sorted sibling folder when
+a folder ends; it does not infer series relationships from metadata.
+
+The cache processes that priority order, skipping episodes that cannot fit.
+Higher-priority selected episodes are protected so an oversized candidate list
+does not cause repeated upload/eviction cycles. Other copies are evicted least
+recently used first, only as needed. Usage timestamps persist across restarts
+and update on MediaCove cloud-playback requests and normal viewing-progress
+reports. Direct public-link playback outside MediaCove cannot report usage.
+Newly queued episodes count as recently used; legacy entries fall back to their
+existing insertion order.
+
+Before eviction, the original video must be within the 5 GB file limit and its
+actual video-plus-selected-subtitle size must fit the entire cache budget.
+MediaCove prepares and validates the subtitle before deleting anything. It also
+plans enough reclaimable space in advance; active uploads and protected selected
+episodes are excluded. If these checks fail, nothing is deleted. Video and
+subtitle cache copies are removed together; original library files stay intact.
+Google deletion/upload failures can still interrupt a replacement and are
+reported rather than hidden.
+
+Manually removing a cached episode suppresses automatic re-addition until newer
+viewing activity makes it eligible again. A manual Cache episode action can
+explicitly add it sooner. The settings dialog lists skipped candidates and reasons.
