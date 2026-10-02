@@ -8,8 +8,8 @@ development preview, not yet as a public Samsung TV package.
 ## Features
 
 - Video streaming from a computer to an LG TV on the same private LAN
-- Clear Server unavailable / Retry controls when the computer cannot be reached
-- Experimental Google Drive settings under Server Control → Settings: account connection, household cache budget, and saved episodes. Use Library Options to manage saved episodes, or enable automatic Up Next selection with capacity-checked eviction. [Setup and limitations](docs/GOOGLE_DRIVE_CACHE.md). Automatic TV cloud fallback remains under development.
+- Automatic compatible-server selection, saved-installation DHCP recovery, and automatic reconnection after outages
+- Experimental Google Drive settings under Server Control → Settings: account connection, household cache budget, and saved episodes. Use Library Options to manage saved episodes, or enable automatic Up Next selection with capacity-checked eviction. [Setup and limitations](docs/GOOGLE_DRIVE_CACHE.md). The TV saves a ready-copy catalog and streams cached copies directly from Google if the computer is unavailable, including after relaunch. Internet and supported original codecs are required; provider delivery remains experimental.
 - Automatic English caption generation with local Whisper models and restored VAD timing correction (regenerate existing tracks after updating)
 - Automatic same-language transcription
 - Subtitle search and download from OpenSubtitles.org
@@ -22,16 +22,16 @@ source repository is private and is not mirrored here.
 MediaCove is currently a free public beta. No payment method is required and
 users are not charged automatically.
 
-MediaCove 1.3.13 has one complete
-[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.3.13) for all
+MediaCove 1.3.14 has one complete
+[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.3.14) for all
 platforms:
 
-- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.3.13/MediaCove-Server-1.3.13-Windows-x64.exe)
-- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.3.13/MediaCove-Server-1.3.13-Linux-macOS-Portable.tar.gz)
-- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.3.13/MediaCove-Server-1.3.13-Linux-macOS-Portable.tar.gz.sha256)
-- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.3.13/MediaCove-TV-1.3.13.ipk)
-- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.3.13/SHA256SUMS.txt)
-- [MediaCove 1.3.13 release notes](RELEASE_NOTES_1.3.13.md)
+- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.3.14/MediaCove-Server-1.3.14-Windows-x64.exe)
+- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.3.14/MediaCove-Server-1.3.14-Linux-macOS-Portable.tar.gz)
+- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.3.14/MediaCove-Server-1.3.14-Linux-macOS-Portable.tar.gz.sha256)
+- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.3.14/MediaCove-TV-1.3.14.ipk)
+- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.3.14/SHA256SUMS.txt)
+- [MediaCove 1.3.14 release notes](RELEASE_NOTES_1.3.14.md)
 
 The TV package is for temporary Developer Mode testing. It is not yet available
 as a permanent LG Content Store installation.
@@ -107,7 +107,7 @@ After installing both apps, open `http://localhost:32480` on the computer and ad
 your media folders in **Server Control**. The TV connects automatically when no
 management password is configured; otherwise enter that password on the TV.
 
-Update both the server and LG TV app to 1.3.13. The web player is included in the
+Update both the server and LG TV app to 1.3.14. The web player is included in the
 server update. TV episode caching has been removed; Google Drive caching is
 not included in this release.
 
@@ -136,19 +136,19 @@ Each release includes SHA-256 integrity information. In PowerShell, compare the
 Windows installer with the published value:
 
 ```powershell
-Get-FileHash .\MediaCove-Server-1.3.13-Windows-x64.exe -Algorithm SHA256
+Get-FileHash .\MediaCove-Server-1.3.14-Windows-x64.exe -Algorithm SHA256
 ```
 
 On Linux, verify the portable archive with its companion file:
 
 ```sh
-sha256sum -c MediaCove-Server-1.3.13-Linux-macOS-Portable.tar.gz.sha256
+sha256sum -c MediaCove-Server-1.3.14-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 On macOS:
 
 ```sh
-shasum -a 256 -c MediaCove-Server-1.3.13-Linux-macOS-Portable.tar.gz.sha256
+shasum -a 256 -c MediaCove-Server-1.3.14-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 ## Support And Policies

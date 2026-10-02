@@ -1,6 +1,6 @@
 # Google Drive cache controls
 
-MediaCove 1.3.12 places experimental cache controls in Google settings.
+MediaCove 1.3.14 places experimental cache controls in Google settings.
 Google connection is optional and starts disconnected. Normal LAN playback
 continues without Google or an internet connection.
 
@@ -33,11 +33,19 @@ Open **Server Control → Settings → Google settings** on the server dashboard
 - **Play cloud copy:** opens a browser preview using the public Drive video and
   its default subtitle. The browser must support the original codecs.
 
-The existing TV playback path remains LAN-first. These server controls do not
-yet supply a persistent cloud catalog or automatic cloud fallback to the TV;
-the previously released TV still needs the computer for browsing and playback.
-Do not present the browser preview or earlier TV benchmarks as a shipped
-computer-off playback feature.
+The TV playback path remains LAN-first. Update both the server and TV, then
+connect once while the computer is running. The TV saves a catalog of ready
+public video links and the selected subtitle link. If the computer becomes
+unavailable, **Cached episodes** lets you browse and stream those copies
+directly from Google, including after relaunch. Internet is required. Only
+metadata and links are saved locally; no video bodies are downloaded into TV
+storage. Reconnection runs automatically about every 15 seconds after a
+failed connection and uploads pending viewing progress before refreshing the
+online library. The catalog refreshes while connected, without contacting
+Google in the normal LAN playback path. Removed or evicted cloud copies may
+remain in a disconnected TV catalog until the next successful synchronization.
+Original codecs must work on the TV; the unavailable computer cannot transcode.
+Google can still block delivery, so unattended reliability remains experimental.
 
 ## One-time Google setup
 
@@ -93,8 +101,10 @@ Live household verification passed for encrypted connection across restart,
 an unchanged 8,150,964-byte video plus its English subtitle, anonymous range
 checks, browser playback, and paired removal with the source preserved.
 Long-running upload cancellation and unattended cloud reliability remain
-experimental. Repeat large-file TV tests only
-after the managed cloud catalog and fallback are integrated.
+experimental. The 1.3.14 candidate physically streamed the small cached video
+and its subtitle on LG with the computer server stopped, retained its catalog
+and resume progress after relaunch, then reconciled progress when the server
+returned. Large-file, long-duration TV delivery remains unverified.
 
 References: [desktop OAuth](https://developers.google.com/identity/protocols/oauth2/native-app),
 [refresh-token lifetimes](https://developers.google.com/identity/protocols/oauth2),

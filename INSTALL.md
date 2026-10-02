@@ -4,13 +4,15 @@ This guide installs the MediaCove server on a computer and the client on an LG
 webOS TV. It also documents the emulator-tested Samsung Tizen development
 preview. The server and TV must be on the same private network.
 
-For release 1.3.13, update both the computer server and LG TV app. The web player
+For release 1.3.14, update both the computer server and LG TV app. The web player
 is included in the server update; existing media folders and viewing progress
 are preserved.
 
-After updating, regenerate previously generated captions to apply the restored
-VAD timing correction. When the computer is unreachable, the TV shows Server
-unavailable with a remote-usable Retry button after its connection timeout.
+After updating both apps, connect the TV once while the computer is running to
+synchronize ready cloud-copy links. Automatic discovery skips incompatible old
+servers, and saved connections recover by installation identity after DHCP
+changes. The TV retries automatically after an outage; Try again remains
+available on the remote.
 
 After updating, open **Server Control → Settings → Google settings** on the regular
 server dashboard for account connection, the total storage budget, and saved
@@ -648,11 +650,16 @@ Select an unwatched movie to begin full-screen playback immediately. A partially
 
 ### LAN playback and TV storage
 
-The computer and MediaCove server must remain running while the TV browses or
-plays episodes. MediaCove does not store episode files, library snapshots,
-artwork, or subtitles in TV browser storage for offline playback. If the server
-is unavailable, restore its LAN connection and select **Try again** or
-**Refresh**. Local playback does not need a cloud storage service.
+Normal library browsing and playback use the running LAN server and need no
+internet. With optional Google caching configured, the TV saves a small catalog
+of ready copies and their subtitle links while connected. After a computer
+outage or app relaunch, **Cached episodes** opens that catalog and streams
+directly from Google with internet access. MediaCove never stores video bodies
+in TV browser storage. The TV reconnects automatically and uploads pending
+viewing progress when the computer returns. Google may block a public copy,
+and an evicted copy can remain listed until the next successful catalog sync.
+Cloud fallback plays original codecs and cannot transcode while the computer
+is off.
 
 ## 9. Logs and troubleshooting
 
