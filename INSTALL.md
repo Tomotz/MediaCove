@@ -4,9 +4,9 @@ This guide installs the MediaCove server on a computer and the client on an LG
 webOS TV. It also documents the emulator-tested Samsung Tizen development
 preview. The server and TV must be on the same private network.
 
-For release 1.3.14, update both the computer server and LG TV app. The web player
-is included in the server update; existing media folders and viewing progress
-are preserved.
+For release 1.3.15, update the LG TV app to get the library and playback fixes.
+Update the computer server for the same fixes in its web player. Existing
+media folders and viewing progress are preserved.
 
 After updating both apps, connect the TV once while the computer is running to
 synchronize ready cloud-copy links. Automatic discovery skips incompatible old
