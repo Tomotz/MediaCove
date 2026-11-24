@@ -22,16 +22,16 @@ source repository is private and is not mirrored here.
 MediaCove is currently a free public beta. No payment method is required and
 users are not charged automatically.
 
-MediaCove 1.3.16 has one complete
-[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.3.16) for all
+MediaCove 1.3.17 has one complete
+[release page](https://github.com/Tomotz/MediaCove/releases/tag/v1.3.17) for all
 platforms:
 
-- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.3.16/MediaCove-Server-1.3.16-Windows-x64.exe)
-- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.3.16/MediaCove-Server-1.3.16-Linux-macOS-Portable.tar.gz)
-- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.3.16/MediaCove-Server-1.3.16-Linux-macOS-Portable.tar.gz.sha256)
-- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.3.16/MediaCove-TV-1.3.16.ipk)
-- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.3.16/SHA256SUMS.txt)
-- [MediaCove 1.3.16 release notes](RELEASE_NOTES_1.3.16.md)
+- [Windows x64 installer](https://github.com/Tomotz/MediaCove/releases/download/v1.3.17/MediaCove-Server-1.3.17-Windows-x64.exe)
+- [Linux/macOS x64/ARM64 portable server](https://github.com/Tomotz/MediaCove/releases/download/v1.3.17/MediaCove-Server-1.3.17-Linux-macOS-Portable.tar.gz)
+- [Portable-server checksum](https://github.com/Tomotz/MediaCove/releases/download/v1.3.17/MediaCove-Server-1.3.17-Linux-macOS-Portable.tar.gz.sha256)
+- [LG webOS Developer Mode package](https://github.com/Tomotz/MediaCove/releases/download/v1.3.17/MediaCove-TV-1.3.17.ipk)
+- [Complete SHA-256 manifest](https://github.com/Tomotz/MediaCove/releases/download/v1.3.17/SHA256SUMS.txt)
+- [MediaCove 1.3.17 release notes](RELEASE_NOTES_1.3.17.md)
 
 The TV package is for temporary Developer Mode testing. It is not yet available
 as a permanent LG Content Store installation.
@@ -107,7 +107,7 @@ After installing both apps, open `http://localhost:32480` on the computer and ad
 your media folders in **Server Control**. The TV connects automatically when no
 management password is configured; otherwise enter that password on the TV.
 
-Update the LG TV app to 1.3.16 for the library and playback fixes.
+Update the LG TV app to 1.3.17 for the library and playback fixes.
 Update the computer server for the same fixes in its web player.
 
 If the library opens but playback reports that server access is inactive, open
@@ -135,19 +135,19 @@ Each release includes SHA-256 integrity information. In PowerShell, compare the
 Windows installer with the published value:
 
 ```powershell
-Get-FileHash .\MediaCove-Server-1.3.16-Windows-x64.exe -Algorithm SHA256
+Get-FileHash .\MediaCove-Server-1.3.17-Windows-x64.exe -Algorithm SHA256
 ```
 
 On Linux, verify the portable archive with its companion file:
 
 ```sh
-sha256sum -c MediaCove-Server-1.3.16-Linux-macOS-Portable.tar.gz.sha256
+sha256sum -c MediaCove-Server-1.3.17-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 On macOS:
 
 ```sh
-shasum -a 256 -c MediaCove-Server-1.3.16-Linux-macOS-Portable.tar.gz.sha256
+shasum -a 256 -c MediaCove-Server-1.3.17-Linux-macOS-Portable.tar.gz.sha256
 ```
 
 ## Support And Policies
