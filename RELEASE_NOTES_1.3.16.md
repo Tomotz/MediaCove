@@ -3,8 +3,7 @@
 ## Changes
 
 - Show the title and buffering status together in the same font.
-- Keep playback requested after an interrupted native LG startup and avoid
-  a redundant seek when the stream is already at its start.
+- Keep playback requested after an interrupted native LG startup.
 - Retry a stalled LG remux once with a transcoded stream at the same position.
 
 ## Install
